@@ -77,12 +77,22 @@ header {
     gap: 12px;
 }
 
-.phone, .address {
+.phone, .address, .rendez-vous {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1.1rem;
     font-weight: 500;
+}
+
+.rendez-vous {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .address-btn {
@@ -444,6 +454,14 @@ nav a.active {
     background-color: rgba(77, 150, 255, 0.05);
 }
 
+.remboursement {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 5px;
+    font-style: italic;
+}
+
 .prise-en-charge {
     flex: 1;
     min-width: 300px;
@@ -663,6 +681,7 @@ footer {
     
     .contact-info {
         align-items: center;
+        width: 100%;
     }
     
     .section h2 {
@@ -682,8 +701,26 @@ footer {
         transform: translateX(-50%);
     }
     
-    .phone, .address-btn {
+    .phone, .address-btn, .rendez-vous {
         padding: 8px 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .tarifs-table {
+        font-size: 0.9rem;
+    }
+    
+    .remboursement {
+        font-size: 0.75rem;
+    }
+    
+    .accordion-header {
+        padding: 15px 20px;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 20px;
     }
 }
 
@@ -712,6 +749,87 @@ footer {
     
     .horaires-table th, .horaires-table td,
     .tarifs-table th, .tarifs-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .horaires-table .lieu {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .remboursement {
+        font-size: 0.7rem;
+    }
+    
+    .service-card {
+        padding: 20px 15px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .accordion-header {
         padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .role-section {
+        padding: 20px;
+    }
+    
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    .prise-en-charge {
+        padding: 20px;
+    }
+    
+    .adresse-complete p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Optimisations spécifiques pour les très petits écrans */
+@media (max-width: 360px) {
+    .logo-title h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-title h2 {
+        font-size: 0.9rem;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .horaires-table th, .horaires-table td,
+    .tarifs-table th, .tarifs-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .ameli-link {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .presentation-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .presentation-text h4 {
+        font-size: 1.1rem;
     }
 }-
