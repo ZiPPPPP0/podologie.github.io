@@ -7,19 +7,19 @@
 
 /* Variables de couleurs */
 :root {
-    --primary-color: #4D96FF; /* Bleu plus vif */
-    --primary-dark: #0061A8;
-    --primary-light: #AED6FF;
-    --accent-color: #0A2463;
-    --secondary-color: #73BFDC;
+    --primary-color: #D68C45; /* Couleur ocre */
+    --primary-dark: #B86F33;
+    --primary-light: #F2B887;
+    --accent-color: #734827;
+    --secondary-color: #C4966D;
     --text-color: #333;
     --text-light: #666;
     --background-light: #f8f9fa;
     --white: #ffffff;
     --border-color: #ddd;
     --success-color: #28a745;
-    --card-gradient: linear-gradient(135deg, #4D96FF 0%, #73BFDC 100%);
-    --button-gradient: linear-gradient(to right, #4D96FF, #0061A8);
+    --card-gradient: linear-gradient(135deg, #D68C45 0%, #C4966D 100%);
+    --button-gradient: linear-gradient(to right, #D68C45, #B86F33);
 }
 
 body {
@@ -166,6 +166,16 @@ nav a:hover::after, nav a.active::after {
 
 nav a.active {
     color: var(--primary-color);
+}
+
+/* Menu mobile */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Sections */
@@ -682,6 +692,22 @@ footer {
         gap: 15px;
         text-align: center;
         padding: 15px 10px;
+        justify-content: space-between;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    nav#main-nav {
+        display: none; /* Masquer par défaut */
+    }
+    
+    nav#main-nav.active {
+        display: block;
     }
     
     .contact-info {
@@ -739,12 +765,14 @@ footer {
     }
     
     nav ul {
+        flex-direction: column;
         gap: 15px;
     }
     
     nav a {
         padding: 6px 12px;
         font-size: 0.95rem;
+        display: block;
     }
 }
 
