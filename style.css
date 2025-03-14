@@ -1,0 +1,489 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Polices */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+/* Variables de couleurs */
+:root {
+    --primary-color: #87CEEB; /* Bleu ciel */
+    --primary-dark: #5BA3C9;
+    --primary-light: #B9E1F5;
+    --accent-color: #0078A8;
+    --text-color: #333;
+    --text-light: #666;
+    --background-light: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #ddd;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header et bannière */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.banner {
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-title h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.logo-title h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phone, .address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+.address a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.address a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--white);
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--primary-light);
+    color: var(--accent-color);
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Section Présentation */
+.presentation-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.presentation-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.presentation-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.presentation-text p {
+    margin-bottom: 10px;
+}
+
+.presentation-text h4 {
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+}
+
+.presentation-text ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.info-complementaire {
+    background-color: var(--primary-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.presentation-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+/* Définitions */
+.accordion {
+    margin-bottom: 40px;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px 20px;
+    background-color: var(--primary-light);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 1.2rem;
+}
+
+.accordion-item.active .accordion-header::after {
+    content: '-';
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+}
+
+.accordion-item.active .accordion-content {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.accordion-content p, .accordion-content ul {
+    margin-bottom: 15px;
+}
+
+.accordion-content ul {
+    margin-left: 20px;
+}
+
+.role-section {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.role-section h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.role-section ul {
+    margin-left: 20px;
+}
+
+/* Tarifs */
+.tarifs-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tarifs-table {
+    flex: 1;
+    min-width: 300px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tarifs-table th, .tarifs-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tarifs-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.tarifs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prise-en-charge {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.prise-en-charge h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.prise-en-charge ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.ameli-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.ameli-link:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Horaires */
+.horaires-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.horaires-table th, .horaires-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.horaires-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.horaires-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lieu {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.ferme {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Localisation */
+.map-container {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.adresse-complete {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.adresse-complete h3 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.adresse-complete p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-info, .footer-horaires {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info h3, .footer-horaires h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .contact-info {
+        align-items: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .presentation-content, 
+    .tarifs-content, 
+    .
