@@ -24,13 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const header = item.querySelector('.accordion-header');
         
         header.addEventListener('click', () => {
-            // Fermer tous les autres accordéons
-            accordionItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
             // Basculer l'état de l'accordéon actuel
             item.classList.toggle('active');
         });
@@ -84,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Animation pour les cartes de services
+// Animation pour les cartes de services au défilement
 window.addEventListener('scroll', function() {
     const serviceCards = document.querySelectorAll('.service-card');
     
