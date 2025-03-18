@@ -884,4 +884,104 @@ footer {
     .presentation-text h4 {
         font-size: 1.1rem;
     }
-}-
+}
+
+/* Ajout au fichier CSS existant - Styles pour les images */
+
+/* Image de profil dans la section présentation */
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.profile-image:hover {
+    transform: translateY(-5px);
+}
+
+/* Images dans les cartes de services */
+.service-image {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Images dans les définitions (accordéon) */
+.definition-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.definition-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.definition-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.definition-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le rôle du podologue avec image */
+.role-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.role-text {
+    flex: 3;
+    min-width: 300px;
+}
+
+.role-image {
+    flex: 2;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+.role-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Adaptations pour les appareils mobiles */
+@media (max-width: 768px) {
+    .definition-content, .role-content {
+        flex-direction: column;
+    }
+    
+    .definition-image, .role-image {
+        margin: 0 auto;
+    }
+    
+    .service-image img {
+        height: 160px;
+    }
+}
