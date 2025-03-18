@@ -888,19 +888,38 @@ footer {
 
 /* Ajout au fichier CSS existant - Styles pour les images */
 
-/* Image de profil dans la section présentation */
-.profile-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    object-fit: cover;
+/* Section présentation avec l'image en fond */
+.with-background-image {
+    position: relative;
+    overflow: hidden;
 }
 
-.profile-image:hover {
-    transform: translateY(-5px);
+.with-background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('images/image_presentation.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* Assurer la lisibilité du texte sur l'image de fond */
+.presentation-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Conteneur pour la partie image */
+.presentation-image {
+    flex: 1;
+    min-width: 300px;
+    min-height: 350px;
 }
 
 /* Images dans les cartes de services */
