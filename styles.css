@@ -48,9 +48,10 @@ header {
     z-index: 100;
 }
 
+/* Bannière réduite en hauteur */
 .banner {
     background: var(--card-gradient);
-    padding: 20px;
+    padding: 10px; /* Réduit de 20px à 10px */
     color: var(--white);
     display: flex;
     justify-content: space-between;
@@ -59,14 +60,14 @@ header {
 }
 
 .logo-title h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
+    font-size: 1.8rem; /* Réduit de 2.2rem */
+    margin-bottom: 3px; /* Réduit de 5px */
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .logo-title h2 {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Réduit de 1.2rem */
     font-weight: 400;
     opacity: 0.9;
 }
@@ -74,22 +75,35 @@ header {
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* Réduit de 12px */
 }
 
 .phone, .address, .rendez-vous {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem;
     font-weight: 500;
+}
+
+/* Mise en évidence du numéro de téléphone */
+.phone {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 30px;
+}
+
+.phone-number {
+    font-size: 1.8rem; /* Augmenté pour visibilité */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .rendez-vous {
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
+    padding: 6px 12px; /* Réduit de 8px 15px */
     border-radius: 30px;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Réduit de 0.9rem */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -100,10 +114,11 @@ header {
     color: var(--white);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
+    padding: 6px 12px; /* Réduit de 8px 15px */
     border-radius: 30px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    font-size: 0.9rem; /* Réduit */
 }
 
 .address-btn:hover {
@@ -112,16 +127,10 @@ header {
     transform: translateY(-2px);
 }
 
-.phone {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
-    border-radius: 30px;
-}
-
 /* Navigation */
 nav {
     background-color: var(--white);
-    padding: 15px 0;
+    padding: 12px 0; /* Réduit de 15px */
     border-bottom: 1px solid var(--primary-light);
 }
 
@@ -180,7 +189,7 @@ nav a.active {
 
 /* Sections */
 .section {
-    padding: 80px 0;
+    padding: 70px 0; /* Réduit de 80px */
     position: relative;
 }
 
@@ -190,11 +199,11 @@ nav a.active {
 
 .section h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px; /* Réduit de 50px */
     color: var(--accent-color);
     position: relative;
     padding-bottom: 15px;
-    font-size: 2.2rem;
+    font-size: 2rem; /* Réduit de 2.2rem */
     font-weight: 700;
 }
 
@@ -209,12 +218,46 @@ nav a.active {
     background: var(--card-gradient);
 }
 
-/* Section Présentation */
+/* Section Présentation avec fond */
+.with-background-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.with-background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('images/image_presentation.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* Conteneur pour le contenu sur le fond */
 .presentation-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     gap: 50px;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+
+/* Accroche en gras */
+.accroche {
+    background-color: rgba(214, 140, 69, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid var(--primary-color);
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
 .presentation-text {
@@ -272,21 +315,18 @@ nav a.active {
     justify-content: center;
 }
 
-.image-placeholder {
-    width: 300px;
-    height: 300px;
-    background: var(--card-gradient);
+/* Photo de Sophie */
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-size: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
-.image-placeholder:hover {
+.profile-image:hover {
     transform: translateY(-5px);
 }
 
@@ -295,6 +335,7 @@ nav a.active {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    margin-bottom: 40px;
 }
 
 .service-card {
@@ -340,11 +381,25 @@ nav a.active {
     color: var(--text-light);
 }
 
-/* Définitions */
-.definitions-section {
-    margin-top: 50px;
+/* Images dans les cartes de services */
+.service-image {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
+.service-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Définitions (accordéon) */
 .accordion {
     margin-bottom: 40px;
 }
@@ -404,6 +459,31 @@ nav a.active {
     margin-left: 20px;
 }
 
+/* Images dans les définitions (accordéon) */
+.definition-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.definition-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.definition-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.definition-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .role-section {
     background-color: var(--white);
     padding: 30px;
@@ -425,6 +505,31 @@ nav a.active {
 
 .role-section li {
     margin-bottom: 10px;
+}
+
+/* Styles pour le rôle du podologue avec image */
+.role-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.role-text {
+    flex: 3;
+    min-width: 300px;
+}
+
+.role-image {
+    flex: 2;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+.role-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Tarifs */
@@ -674,15 +779,19 @@ footer {
     }
     
     .banner {
-        padding: 15px;
+        padding: 10px;
     }
     
     .logo-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .logo-title h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .phone-number {
+        font-size: 1.6rem;
     }
 }
 
@@ -691,7 +800,7 @@ footer {
         flex-direction: column;
         gap: 15px;
         text-align: center;
-        padding: 15px 10px;
+        padding: 10px;
         justify-content: space-between;
     }
     
@@ -739,6 +848,10 @@ footer {
         font-size: 0.9rem;
     }
     
+    .phone-number {
+        font-size: 1.6rem;
+    }
+    
     .tarifs-table {
         font-size: 0.9rem;
     }
@@ -774,6 +887,14 @@ footer {
         font-size: 0.95rem;
         display: block;
     }
+    
+    .definition-content, .role-content {
+        flex-direction: column;
+    }
+    
+    .definition-image, .role-image {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 576px) {
@@ -792,11 +913,15 @@ footer {
     }
     
     .logo-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .logo-title h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .phone-number {
+        font-size: 1.4rem;
     }
     
     .horaires-table th, .horaires-table td,
@@ -855,11 +980,15 @@ footer {
 /* Optimisations spécifiques pour les très petits écrans */
 @media (max-width: 360px) {
     .logo-title h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .logo-title h2 {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+    }
+    
+    .phone-number {
+        font-size: 1.3rem;
     }
     
     .section h2 {
@@ -883,119 +1012,5 @@ footer {
     
     .presentation-text h4 {
         font-size: 1.1rem;
-    }
-}
-
-/* Ajout au fichier CSS existant - Styles pour les images */
-
-/* Section présentation avec l'image en fond */
-/* Styles pour l'image de présentation */
-.profile-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    object-fit: cover;
-}
-
-.profile-image:hover {
-    transform: translateY(-5px);
-}
-
-/* Assurer la lisibilité du texte sur l'image de fond */
-.presentation-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Conteneur pour la partie image */
-.presentation-image {
-    flex: 1;
-    min-width: 300px;
-    min-height: 350px;
-}
-
-/* Images dans les cartes de services */
-.service-image {
-    margin-top: 20px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.service-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.service-image img:hover {
-    transform: scale(1.05);
-}
-
-/* Images dans les définitions (accordéon) */
-.definition-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-}
-
-.definition-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.definition-image {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-}
-
-.definition-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles pour le rôle du podologue avec image */
-.role-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-}
-
-.role-text {
-    flex: 3;
-    min-width: 300px;
-}
-
-.role-image {
-    flex: 2;
-    min-width: 250px;
-    max-width: 350px;
-}
-
-.role-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Adaptations pour les appareils mobiles */
-@media (max-width: 768px) {
-    .definition-content, .role-content {
-        flex-direction: column;
-    }
-    
-    .definition-image, .role-image {
-        margin: 0 auto;
-    }
-    
-    .service-image img {
-        height: 160px;
     }
 }
