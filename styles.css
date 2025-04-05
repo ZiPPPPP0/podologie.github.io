@@ -5,21 +5,21 @@
     box-sizing: border-box;
 }
 
-/* Variables de couleurs */
+/* Variables de couleurs modifiées pour le thème teal (#008080) */
 :root {
-    --primary-color: #D68C45; /* Couleur ocre */
-    --primary-dark: #B86F33;
-    --primary-light: #F2B887;
-    --accent-color: #734827;
-    --secondary-color: #C4966D;
+    --primary-color: #008080; /* Teal - Nouvelle couleur principale */
+    --primary-dark: #006666; /* Teal foncé */
+    --primary-light: #66B2B2; /* Teal clair */
+    --accent-color: #004D4D; /* Accent teal plus foncé */
+    --secondary-color: #4DB6B6; /* Teal plus clair pour les éléments secondaires */
     --text-color: #333;
     --text-light: #666;
     --background-light: #f8f9fa;
     --white: #ffffff;
     --border-color: #ddd;
     --success-color: #28a745;
-    --card-gradient: linear-gradient(135deg, #D68C45 0%, #C4966D 100%);
-    --button-gradient: linear-gradient(to right, #D68C45, #B86F33);
+    --card-gradient: linear-gradient(135deg, #008080 0%, #4DB6B6 100%);
+    --button-gradient: linear-gradient(to right, #008080, #006666);
 }
 
 body {
@@ -43,7 +43,7 @@ p, li {
 header {
     background-color: var(--white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: auto;
     top: 0;
     z-index: 100;
 }
@@ -51,7 +51,7 @@ header {
 /* Bannière réduite en hauteur */
 .banner {
     background: var(--card-gradient);
-    padding: 10px; /* Réduit de 20px à 10px */
+    padding: 10px;
     color: var(--white);
     display: flex;
     justify-content: space-between;
@@ -60,22 +60,67 @@ header {
 }
 
 .logo-title h1 {
-    font-size: 1.8rem; /* Réduit de 2.2rem */
-    margin-bottom: 3px; /* Réduit de 5px */
+    font-size: 1.8rem;
+    margin-bottom: 3px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
-.logo-title h2 {
-    font-size: 1rem; /* Réduit de 1.2rem */
+.logo-title .subtitle {
+    font-size: 1rem;
     font-weight: 400;
     opacity: 0.9;
+}
+
+/* Style pour la nouvelle image principale */
+.image-principale {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 50vh;
+    min-height: 300px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Style pour la section d'information sur les semelles */
+.info-semelles {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 128, 128, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-semelles h4 {
+    margin-bottom: 12px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.info-semelles ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.info-semelles li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.info-semelles p {
+    margin: 10px 0;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Réduit de 12px */
+    gap: 8px;
 }
 
 .phone, .address, .rendez-vous {
@@ -93,7 +138,7 @@ header {
 }
 
 .phone-number {
-    font-size: 1.8rem; /* Augmenté pour visibilité */
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -101,9 +146,9 @@ header {
 
 .rendez-vous {
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px; /* Réduit de 8px 15px */
+    padding: 6px 12px;
     border-radius: 30px;
-    font-size: 0.85rem; /* Réduit de 0.9rem */
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -114,11 +159,11 @@ header {
     color: var(--white);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px; /* Réduit de 8px 15px */
+    padding: 6px 12px;
     border-radius: 30px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    font-size: 0.9rem; /* Réduit */
+    font-size: 0.9rem;
 }
 
 .address-btn:hover {
@@ -130,7 +175,7 @@ header {
 /* Navigation */
 nav {
     background-color: var(--white);
-    padding: 12px 0; /* Réduit de 15px */
+    padding: 12px 0;
     border-bottom: 1px solid var(--primary-light);
 }
 
@@ -189,21 +234,21 @@ nav a.active {
 
 /* Sections */
 .section {
-    padding: 70px 0; /* Réduit de 80px */
+    padding: 70px 0;
     position: relative;
 }
 
 .section:nth-child(even) {
-    background-color: rgba(77, 150, 255, 0.05);
+    background-color: rgba(0, 128, 128, 0.05);
 }
 
 .section h2 {
     text-align: center;
-    margin-bottom: 40px; /* Réduit de 50px */
+    margin-bottom: 40px;
     color: var(--accent-color);
     position: relative;
     padding-bottom: 15px;
-    font-size: 2rem; /* Réduit de 2.2rem */
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -251,7 +296,7 @@ nav a.active {
 
 /* Accroche en gras */
 .accroche {
-    background-color: rgba(214, 140, 69, 0.1);
+    background-color: rgba(0, 128, 128, 0.1);
     padding: 15px;
     border-radius: 8px;
     margin: 20px 0;
@@ -301,7 +346,7 @@ nav a.active {
 }
 
 .hygiene-info {
-    background-color: rgba(77, 150, 255, 0.1);
+    background-color: rgba(0, 128, 128, 0.1);
     padding: 20px;
     border-radius: 8px;
     margin: 25px 0;
@@ -361,7 +406,7 @@ nav a.active {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--primary-color);
-    background-color: rgba(77, 150, 255, 0.1);
+    background-color: rgba(0, 128, 128, 0.1);
     width: 80px;
     height: 80px;
     display: flex;
@@ -409,12 +454,12 @@ nav a.active {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(77, 150, 255, 0.2);
+    border: 1px solid rgba(0, 128, 128, 0.2);
 }
 
 .accordion-header {
     padding: 18px 25px;
-    background: linear-gradient(to right, var(--primary-light), rgba(77, 150, 255, 0.1));
+    background: linear-gradient(to right, var(--primary-light), rgba(0, 128, 128, 0.1));
     cursor: pointer;
     font-weight: 600;
     display: flex;
@@ -570,7 +615,7 @@ nav a.active {
 }
 
 .tarifs-table tr:hover td {
-    background-color: rgba(77, 150, 255, 0.05);
+    background-color: rgba(0, 128, 128, 0.05);
 }
 
 .remboursement {
@@ -653,14 +698,14 @@ nav a.active {
 }
 
 .horaires-table tr:hover td {
-    background-color: rgba(77, 150, 255, 0.05);
+    background-color: rgba(0, 128, 128, 0.05);
 }
 
 .lieu {
     font-size: 0.85rem;
     color: var(--text-light);
     font-style: italic;
-    background-color: rgba(77, 150, 255, 0.1);
+    background-color: rgba(0, 128, 128, 0.1);
     padding: 3px 8px;
     border-radius: 4px;
     display: inline-block;
@@ -786,7 +831,7 @@ footer {
         font-size: 1.6rem;
     }
     
-    .logo-title h2 {
+    .logo-title .subtitle {
         font-size: 0.9rem;
     }
     
@@ -899,6 +944,12 @@ footer {
     .definition-image, .role-image {
         margin: 0 auto;
     }
+    
+    /* Réduit la hauteur de l'image principale sur mobile */
+    .image-principale {
+        height: 30vh;
+        min-height: 200px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -920,7 +971,7 @@ footer {
         font-size: 1.5rem;
     }
     
-    .logo-title h2 {
+    .logo-title .subtitle {
         font-size: 0.9rem;
     }
     
@@ -979,6 +1030,12 @@ footer {
     .adresse-complete p {
         font-size: 0.9rem;
     }
+    
+    /* Réduit encore plus l'image principale sur petits écrans */
+    .image-principale {
+        height: 25vh;
+        min-height: 150px;
+    }
 }
 
 /* Optimisations spécifiques pour les très petits écrans */
@@ -987,7 +1044,7 @@ footer {
         font-size: 1.3rem;
     }
     
-    .logo-title h2 {
+    .logo-title .subtitle {
         font-size: 0.8rem;
     }
     
