@@ -77,15 +77,17 @@ header {
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: 50vh;
-    min-height: 300px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .full-width-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
     display: block;
+    object-fit: contain;
 }
 
 /* Style pour la section d'information sur les semelles */
@@ -945,10 +947,9 @@ footer {
         margin: 0 auto;
     }
     
-    /* Réduit la hauteur de l'image principale sur mobile */
+    /* Ajuste l'image principale sur mobile */
     .image-principale {
-        height: 30vh;
-        min-height: 200px;
+        padding: 0;
     }
 }
 
@@ -1031,10 +1032,9 @@ footer {
         font-size: 0.9rem;
     }
     
-    /* Réduit encore plus l'image principale sur petits écrans */
+    /* Ajuste l'image principale sur petits écrans */
     .image-principale {
-        height: 25vh;
-        min-height: 150px;
+        padding: 0;
     }
 }
 
