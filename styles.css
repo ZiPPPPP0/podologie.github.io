@@ -1,17 +1,15 @@
-/* Réinitialisation des styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Variables de couleurs modifiées pour le thème teal (#008080) */
 :root {
-    --primary-color: #008080; /* Teal - Nouvelle couleur principale */
-    --primary-dark: #006666; /* Teal foncé */
-    --primary-light: #66B2B2; /* Teal clair */
-    --accent-color: #004D4D; /* Accent teal plus foncé */
-    --secondary-color: #4DB6B6; /* Teal plus clair pour les éléments secondaires */
+    --primary-color: #008080;
+    --primary-dark: #006666;
+    --primary-light: #66B2B2;
+    --accent-color: #004D4D;
+    --secondary-color: #4DB6B6;
     --text-color: #333;
     --text-light: #666;
     --background-light: #f8f9fa;
@@ -39,7 +37,6 @@ p, li {
     padding: 0 20px;
 }
 
-/* Header et bannière */
 header {
     background-color: var(--white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -48,7 +45,6 @@ header {
     z-index: 100;
 }
 
-/* Bannière réduite en hauteur */
 .banner {
     background: var(--card-gradient);
     padding: 10px;
@@ -60,22 +56,21 @@ header {
 }
 
 .logo-title h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin-bottom: 3px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
-.logo-title .subtitle {
-    font-size: 1rem;
-    font-weight: 400;
-    opacity: 0.9;
+.logo-title h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 3px;
 }
 
-/* Style pour la nouvelle image principale */
 .image-principale {
     width: 100%;
-    height: 612px; /* Hauteur exacte demandée */
+    height: 612px;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -87,10 +82,9 @@ header {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: contain; /* Garde les proportions mais s'assure que toute l'image est visible */
+    object-fit: contain;
 }
 
-/* Style pour la section d'information sur les semelles */
 .info-semelles {
     margin-top: 20px;
     padding: 15px;
@@ -132,7 +126,6 @@ header {
     font-weight: 500;
 }
 
-/* Mise en évidence du numéro de téléphone */
 .phone {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 8px 15px;
@@ -174,7 +167,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Navigation */
 nav {
     background-color: var(--white);
     padding: 12px 0;
@@ -224,7 +216,6 @@ nav a.active {
     color: var(--primary-color);
 }
 
-/* Menu mobile */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -234,7 +225,6 @@ nav a.active {
     cursor: pointer;
 }
 
-/* Sections */
 .section {
     padding: 70px 0;
     position: relative;
@@ -265,7 +255,6 @@ nav a.active {
     background: var(--card-gradient);
 }
 
-/* Section Présentation avec fond */
 .with-background-image {
     position: relative;
     overflow: hidden;
@@ -286,7 +275,6 @@ nav a.active {
     z-index: 1;
 }
 
-/* Conteneur pour le contenu sur le fond */
 .presentation-content {
     position: relative;
     z-index: 2;
@@ -296,7 +284,6 @@ nav a.active {
     flex-wrap: wrap;
 }
 
-/* Accroche en gras */
 .accroche {
     background-color: rgba(0, 128, 128, 0.1);
     padding: 15px;
@@ -362,7 +349,6 @@ nav a.active {
     justify-content: center;
 }
 
-/* Photo de Sophie */
 .profile-image {
     width: 100%;
     max-width: 300px;
@@ -377,7 +363,6 @@ nav a.active {
     transform: translateY(-5px);
 }
 
-/* Services */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -428,7 +413,6 @@ nav a.active {
     color: var(--text-light);
 }
 
-/* Images dans les cartes de services */
 .service-image {
     margin-top: 20px;
     overflow: hidden;
@@ -446,7 +430,6 @@ nav a.active {
     transform: scale(1.05);
 }
 
-/* Définitions (accordéon) */
 .accordion {
     margin-bottom: 40px;
 }
@@ -495,7 +478,7 @@ nav a.active {
 
 .accordion-item.active .accordion-content {
     padding: 25px;
-    max-height: 800px; /* Augmenté de 500px à 800px pour éviter la troncature du contenu */
+    max-height: 800px;
 }
 
 .accordion-content p, .accordion-content ul {
@@ -506,7 +489,6 @@ nav a.active {
     margin-left: 20px;
 }
 
-/* Images dans les définitions (accordéon) */
 .definition-content {
     display: flex;
     flex-wrap: wrap;
@@ -554,7 +536,6 @@ nav a.active {
     margin-bottom: 10px;
 }
 
-/* Styles pour le rôle du podologue avec image */
 .role-content {
     display: flex;
     flex-wrap: wrap;
@@ -579,7 +560,6 @@ nav a.active {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Tarifs */
 .tarifs-content {
     display: flex;
     gap: 40px;
@@ -670,7 +650,6 @@ nav a.active {
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Horaires */
 .horaires-table {
     width: 100%;
     border-collapse: collapse;
@@ -721,7 +700,6 @@ nav a.active {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Localisation */
 .map-container {
     width: 100%;
     margin-bottom: 30px;
@@ -756,7 +734,6 @@ nav a.active {
     font-size: 1.1rem;
 }
 
-/* Footer */
 footer {
     background: var(--card-gradient);
     color: var(--white);
@@ -807,7 +784,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -819,7 +795,6 @@ footer {
     }
 }
 
-/* Media Queries */
 @media (max-width: 992px) {
     .section {
         padding: 60px 0;
@@ -830,15 +805,19 @@ footer {
     }
     
     .logo-title h1 {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
     
-    .logo-title .subtitle {
-        font-size: 0.9rem;
+    .logo-title h2 {
+        font-size: 1.6rem;
     }
     
     .phone-number {
         font-size: 1.6rem;
+    }
+    
+    .image-principale {
+        height: 400px;
     }
 }
 
@@ -863,7 +842,7 @@ footer {
     }
     
     nav#main-nav {
-        display: none; /* Masquer par défaut */
+        display: none;
     }
     
     nav#main-nav.active {
@@ -923,7 +902,6 @@ footer {
         padding: 40px 0;
     }
     
-    /* Meilleur espacement pour la navigation */
     nav {
         padding: 10px 0;
     }
@@ -947,9 +925,8 @@ footer {
         margin: 0 auto;
     }
     
-    /* Ajuste l'image principale sur mobile */
     .image-principale {
-        padding: 0;
+        height: 400px;
     }
 }
 
@@ -969,11 +946,11 @@ footer {
     }
     
     .logo-title h1 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
     
-    .logo-title .subtitle {
-        font-size: 0.9rem;
+    .logo-title h2 {
+        font-size: 1.5rem;
     }
     
     .phone-number {
@@ -1032,20 +1009,18 @@ footer {
         font-size: 0.9rem;
     }
     
-    /* Ajuste l'image principale sur petits écrans */
     .image-principale {
-        padding: 0;
+        height: 300px;
     }
 }
 
-/* Optimisations spécifiques pour les très petits écrans */
 @media (max-width: 360px) {
     .logo-title h1 {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
     
-    .logo-title .subtitle {
-        font-size: 0.8rem;
+    .logo-title h2 {
+        font-size: 1.3rem;
     }
     
     .phone-number {
